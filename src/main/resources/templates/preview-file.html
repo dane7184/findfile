@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="layout">
+
+<head>
+  <title>Home Page</title>
+</head>
+
+<body>
+  <div layout:fragment="content" class="list_file-wrapper">
+    <div class="file-header">
+      <div>
+        <h5 th:text="${currentPath}"></h5>
+        <h5 th:text="${total}"></h5>
+      </div>
+      <div>
+        <a th:href="@{/folder/save}">
+          <button class="app-btn primary" style="padding: 0 30px;">Save</button>
+        </a>
+      </div>
+    </div>
+    <div class="file-wrapper">
+      <div class="file-card card" th:each="file : ${listFiles}">
+        <div class="icon-wrapper">
+          <img th:src="@{'/' + ${file.icon}}" alt="image">
+        </div>
+        <div class="card-body">
+          <span>
+            <span class="file-info">File Name : </span>
+            <span th:text="${file.fileName}" th:if="${file.fileName}"></span>
+          </span>
+          <span>
+            <span class="file-info">Total Size :</span>
+            <span th:text="${file.size}" th:if="${file.size}"></span>
+          </span>
+          <span>
+            <span class="file-info">Create Date : </span>
+            <span class="date" th:text="${file.createDate}" th:if="${file.createDate}"></span>
+          </span>
+          <span>
+            <span class="file-info">Modified Date : </span>
+            <span class="date" th:text="${file.updateDate}" th:if="${file.updateDate}"></span>
+          </span>
+        </div>
+        <div class="card-footer">
+          <a th:href="@{/folder/file/d/{id}(id=${file.id})}" onclick="handleDelete(event)"
+            th:aria-valuetext="${file.fileName}">
+            <button class="btn-delete">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M20 7V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V7H2V5H22V7H20ZM11 9V11H13V9H11ZM11 12V14H13V12H11ZM11 15V17H13V15H11ZM7 2H17V4H7V2Z">
+                </path>
+              </svg>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

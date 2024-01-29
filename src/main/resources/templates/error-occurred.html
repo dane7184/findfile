@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Server Error</title>
+    <!-- link css -->
+    <link rel="stylesheet" th:href="@{/style/style.css}" type="text/css">
+</head>
+<body>
+    <div class="error-content">
+        <h1 class="text-danger">Internal Server Error</h1>
+        <p th:text="${message}" class="text-danger"></p>
+        <div style="display: flex;justify-content: center;">
+            <a th:href="@{/folder}">
+                <button class="app-btn primary">Back</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

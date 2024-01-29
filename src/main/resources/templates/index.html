@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="home-wrapper">
+        <div th:each="user : ${users}">
+            <div class="user-card card">
+                <div class="image-wrapper">
+                    <img th:src="@{'/' + ${user.imgUrl}}" alt="User Image">
+                </div>
+                <div class="card-title">
+                    <span th:text="${user.name}"></span><br>
+                </div>
+                <div class="card-title">
+                    <span th:text="${user.position}"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

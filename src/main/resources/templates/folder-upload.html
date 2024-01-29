@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <title>Upload Folder</title>
+</head>
+<body>
+    <div layout:fragment="content" class="file_upload-wrapper">
+      <div class="form-wrapper">
+        <form action="/folder/upload" method="post" modelAttribute="formDTO">
+          <div class="column-wrapper">
+            <label for="folderPath">Search Folder Path</label>
+            <input 
+              type="text" 
+              id="folderPath" 
+              name="path" 
+              class="input-box" 
+              placeholder="Past your path..." 
+              required
+            >
+          </div>
+          <div style="display: flex;justify-content: end;">
+            <button type="submit" class="app-btn primary">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</body>
+</html>
