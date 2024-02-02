@@ -27,19 +27,19 @@
         <div class="card-body">
           <span>
             <span class="file-info">File Name : </span>
-            <span th:text="${file.fileName}" th:if="${file.fileName}"></span>
+            <span class="text-wrapper" th:text="${file.fileName}" th:if="${file.fileName}"></span>
           </span>
           <span>
             <span class="file-info">Total Size :</span>
-            <span th:text="${file.size}" th:if="${file.size}"></span>
+            <span class="text-wrapper" th:text="${file.size}" th:if="${file.size}"></span>
           </span>
           <span>
             <span class="file-info">Create Date : </span>
-            <span class="date" th:text="${file.createDate}" th:if="${file.createDate}"></span>
+            <span class="date text-wrapper" th:text="${file.createDate}" th:if="${file.createDate}"></span>
           </span>
           <span>
             <span class="file-info">Modified Date : </span>
-            <span class="date" th:text="${file.updateDate}" th:if="${file.updateDate}"></span>
+            <span class="date text-wrapper" th:text="${file.updateDate}" th:if="${file.updateDate}"></span>
           </span>
         </div>
         <div class="card-footer">

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import rupp.com.kh.dto.FormDTO;
 import rupp.com.kh.services.AppService;
-import rupp.com.kh.storages.AppData;
+import rupp.com.kh.utils.AppData;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -65,18 +65,25 @@ public class AppController {
 
     @GetMapping("/folder/file/d/{id}")
     public String handleDeleteFile(@PathVariable String id) throws Exception{
-        System.out.println(id);
-        return service.handleDeleteFile(UUID.fromString(id)) ? "redirect:/folder/preview-file" : "redirect:/error-occurred";
+        service.handleDeleteFile(UUID.fromString(id));
+        return "redirect:/folder/preview-file";
     }
 
     @GetMapping("folder/save")
     public String handleSaveFiles() throws Exception {
-        return service.handleSaveFiles() ? "redirect:/report" : "redirect:/error-occurred" ;       
+        service.handleSaveFiles();
+        return "redirect:/report" ;       
     }
     @GetMapping("/report")
     public String handleViewReport(Model model) throws Exception{
         model.addAttribute("files",service.getReport());
         return "report";
+    }
+
+    @GetMapping("/report/d/{id}")
+    public String handleDeleteReport(@PathVariable String id) throws Exception {
+        service.handleDeleteReport(UUID.fromString(id));
+        return "redirect:/report";
     }
 
 }

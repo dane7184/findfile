@@ -1,8 +1,13 @@
 package rupp.com.kh.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.nio.file.Path;
 import java.util.UUID;
 
+@Setter
+@Getter
 public class FileDetailDTO {
     private String fileName;
     private String size;
@@ -24,53 +29,9 @@ public class FileDetailDTO {
         String[] arrOfFileNames = fileName.split("\\.");
         this.icon = "images/"  + arrOfFileNames[arrOfFileNames.length-1] + ".png";
     }
-    public String getFileName() {
-        return fileName;
-    }
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public String getCreateDate() {
-        return createDate;
-    }
-    public void setCreateDate(String createDate) {
-        this.createDate = createDate;
-    }
-    public String getUpdateDate() {
-        return updateDate;
-    }
-    public void setUpdateDate(String updateDate) {
-        this.updateDate = updateDate;
-    }
-    public Path getFilePath() {
-        return filePath;
-    }
-    public void setFilePath(Path filePath) {
-        this.filePath = filePath;
-    }
-    public void setId(UUID id){
-        this.id = id;
-    }
-    public UUID getId(){
-        return id;
-    }
-    public String getIcon(){
-        return icon;
-    }
-    public void setIcon(String icon){
-        this.icon = icon;
-    }
 
     public String toString(){
-        return String.format("id=%s&fileName=%s&size=%s&createDate=%s&updateDate=%s&&"
+        return String.format("id=%s&\tfileName=%s\t\t\t\t\t\t&size=%s\t\t\t&createDate=%s\t\t&updateDate=%s\t&&\n"
                 ,id,fileName,size,createDate,updateDate);
     }
 }

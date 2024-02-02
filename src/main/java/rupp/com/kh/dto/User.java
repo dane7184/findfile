@@ -2,7 +2,7 @@ package rupp.com.kh.dto;
 
 
 import lombok.*;
-import rupp.com.kh.enums.Gender;
+        import rupp.com.kh.enums.Gender;
 
 @Data
 @NoArgsConstructor

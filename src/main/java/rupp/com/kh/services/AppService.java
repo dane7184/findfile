@@ -10,8 +10,10 @@ public interface AppService {
 
     List<User> getGoupMembers();
     List<FileDetailDTO> retrieveAllFiles(String pathStr) throws Exception;
-    Boolean handleDeleteFile(UUID id)  throws Exception;
-    Boolean handleSaveFiles()  throws Exception ;
+    void handleDeleteFile(UUID id)  throws Exception;
+    void handleSaveFiles()  throws Exception ;
     List<FileDetailDTO> getReport() throws Exception;
+
+    void handleDeleteReport(UUID id) throws Exception;
     
 }

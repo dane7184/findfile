@@ -3,7 +3,7 @@ package rupp.com.kh.exceptions;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import rupp.com.kh.storages.AppData;
+import rupp.com.kh.utils.AppData;
 
 @ControllerAdvice
 public class AppException {

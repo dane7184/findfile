@@ -33,8 +33,8 @@ function handleLoadApp(){
 
 }
 
-// function handleDelete(event) {
-//     const fileName = event.currentTarget?.getAttribute('aria-valuetext');
-//     const isConfirm = confirm(`Are you sure that you want to delete ${fileName} ?`);
-//     if(!isConfirm) event.preventDefault();
-// }
+function handleDelete(event) {
+    const fileName = event.currentTarget?.getAttribute('aria-valuetext');
+    const isConfirm = confirm(`Are you sure that you want to delete ${fileName?.trim()} ?`);
+    if(!isConfirm) event.preventDefault();
+}

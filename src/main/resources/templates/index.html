@@ -11,13 +11,11 @@
         <div th:each="user : ${users}">
             <div class="user-card card">
                 <div class="image-wrapper">
-                    <img th:src="@{'/' + ${user.imgUrl}}" alt="User Image">
+                    <img th:src="@{'/' + ${user.imgUrl}}" alt="User Image" th:data->
                 </div>
-                <div class="card-title">
-                    <span th:text="${user.name}"></span><br>
-                </div>
-                <div class="card-title">
-                    <span th:text="${user.position}"></span>
+                <div class="card-footer">
+                    <span th:text="${user.name}"></span>
+                    <span class="user-role" th:text="${user.position}"></span>
                 </div>
             </div>
         </div>
